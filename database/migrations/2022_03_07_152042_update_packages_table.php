@@ -14,7 +14,8 @@ class UpdatePackagesTable extends Migration
     public function up()
     {
         Schema::table('packages', function (Blueprint $table) {
-            //
+            $table->boolean('breakfast')->after('price');
+            $table->string('description')->change();
         });
     }
 
@@ -26,8 +27,7 @@ class UpdatePackagesTable extends Migration
     public function down()
     {
         Schema::table('packages', function (Blueprint $table) {
-            $table->boolean('breakfast');
-            $table->string('description')->change();
+            
         });
     }
 }
